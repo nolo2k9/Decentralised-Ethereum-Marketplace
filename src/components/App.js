@@ -3,6 +3,7 @@ import Web3 from 'web3'
 import logo from '../logo.png'
 import './App.css'
 import Marketplace from '../abis/Marketplace.json'
+import Navbar from './Navbar'
 
 class App extends Component {
   componentDidMount() {
@@ -66,22 +67,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <small className="text-white">
-            <a>
-              <b>Blockchain Marketplace</b>
-            </a>
-          </small>
-          <ul className="navbar-nav px-3">
-            <li className="nav-item text-nowrap d-none d-smnone d-sm-block">
-              <small className="text-white">
-                <span id="account">
-                  <b>ACCOUNT:</b> {this.state.account}
-                </span>
-              </small>
-            </li>
-          </ul>
-        </nav>
+        <Navbar account = {this.state.account}/>
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
