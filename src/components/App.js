@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
-import logo from '../logo.png'
+
 import './App.css'
 import Marketplace from '../abis/Marketplace.json'
 import Navbar from './Navbar'
+import Main from './Main'
 
 class App extends Component {
   componentDidMount() {
@@ -43,11 +44,14 @@ class App extends Component {
     //logging abi and network address
     const networkid = await web3.eth.net.getId()
     const networkData = Marketplace.networks[networkid]
+
     if (networkData) {
       const marketplace = new web3.eth.Contract(
         Marketplace.abi,
         networkData.address,
       )
+      this.setState({ marketplace: marketplace })
+      this.setState({ loading: false })
       console.log(networkid)
       console.log(marketplace)
     } else {
@@ -63,24 +67,14 @@ class App extends Component {
       loading: true,
     }
   }
-
   render() {
     return (
       <div>
-        <Navbar account = {this.state.account}/>
+        <Navbar account={this.state.account} />
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={logo} className="App-logo" alt="logo" />
-                </a>
-                <h1></h1>
-              </div>
+              {this.state.loading ? <div id ="loader" className="text-center"><p className = "text-center"> Loading...</p> </div> : <Main/> }
             </main>
           </div>
         </div>
