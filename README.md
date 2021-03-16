@@ -1,7 +1,8 @@
 # Ethereum_Marketplace
 <img width="590" alt="Screenshot 2021-03-16 at 16 56 10" src="https://user-images.githubusercontent.com/29706281/111349291-eae4e900-8678-11eb-83b1-f11e5eda7cea.png">
 
-<img width="590" alt="Screenshot 2021-03-16 at 16 56 10" src="https://user-images.githubusercontent.com/29706281/111349542-2089d200-8679-11eb-8e6c-47a965f6b463.png">
+<img width="604" alt="Screenshot 2021-03-16 at 16 59 35" src="https://user-images.githubusercontent.com/29706281/111349609-2f708480-8679-11eb-97be-159a9fe0c5d1.png">
+
 
 This application is similar to craigslist. It allows users to list items for sale as well as buy them. 
 Users to purchase items using Ethereum. 
